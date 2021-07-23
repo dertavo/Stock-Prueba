@@ -18,7 +18,8 @@ class CreateProductosTable extends Migration
 
             $table->string('sku')->unique();
             $table->string('nombre_producto',255);
-            $table->decimal('cantidad', $precision = 10, $scale = 2);
+            $table->integer('cantidad');
+            $table->decimal('precio', $precision = 10, $scale = 2);
             $table->enum('estado', ['Activo', 'Inactivo']);
 
             $table->timestamps();

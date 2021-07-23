@@ -16,8 +16,9 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return view('welcome');
+    echo "hola?";
 });
+
 
 
 Route::resource('productos',Productos::class);
