@@ -61,12 +61,18 @@
       data-precio="{{$producto->precio}}"
       data-estado="{{$producto->estado}}"
      
-      data-toggle="modal" data-target="#myModal">Ver detalles</a>
-          <a class="btn btn-secondary" href="{{route('productos.edit',$producto->id)}}">Editar</a>
+      data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" ></i></a>
+          <a class="btn btn-secondary" href="{{route('productos.edit',$producto->id)}}">
+          <i class="fa fa-edit" ></i>
+          </a>
           <form action="{{route('productos.destroy',['producto'=>$producto->id])}}" method="post">
          @csrf
          @method('delete')
-        <input type="submit" value="Eliminar" class="btn btn-danger">
+
+         <button type="submit" class="btn btn-danger">
+  <i class="fa fa-trash"></i> 
+        </button>
+         
           </form>
          
 
