@@ -149,8 +149,6 @@ class Productos extends Controller
     {
         //
 
-        echo "xx";
-        die();
 
         ProductosModel::find($id)->delete();
 

@@ -12,7 +12,12 @@
 
 @if(session('status'))
 
-<div>{{session('status')}} </div>
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  {{session('status')}}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
 
 @endif
 
@@ -39,8 +44,14 @@
       <td>{{$producto->precio}}</td>
       <td>{{$producto->estado}}</td>
       <td>
+      <a class="btn btn-success" href="#">Ver detalles</a>
           <a class="btn btn-secondary" href="{{route('productos.edit',$producto->id)}}">Editar</a>
-          <a class="btn btn-danger" href="{{route('productos.destroy',['producto'=>$producto->id]) }}">Eliminar</a>
+          <form action="{{route('productos.destroy',['producto'=>$producto->id])}}" method="post">
+         @csrf
+         @method('delete')
+        <input type="submit" value="Eliminar" class="btn btn-danger">
+          </form>
+         
 
       </td>
     </tr>
