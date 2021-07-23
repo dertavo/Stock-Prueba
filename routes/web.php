@@ -15,9 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', function () {
-    echo "hola?";
-});
+Route::get('/', [Productos::class, 'index']);
 
 
 
