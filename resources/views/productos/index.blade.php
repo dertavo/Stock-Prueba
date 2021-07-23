@@ -56,6 +56,11 @@
       <td>
       <a id="detalles" class="btn btn-success" href="#" 
       data-sku="{{$producto->sku}}"
+      data-nombreproducto="{{$producto->nombre_producto}}"
+      data-cantidad="{{$producto->cantidad}}"
+      data-precio="{{$producto->precio}}"
+      data-estado="{{$producto->estado}}"
+     
       data-toggle="modal" data-target="#myModal">Ver detalles</a>
           <a class="btn btn-secondary" href="{{route('productos.edit',$producto->id)}}">Editar</a>
           <form action="{{route('productos.destroy',['producto'=>$producto->id])}}" method="post">
@@ -84,11 +89,19 @@
       <div class="modal-body">
         <label for="">SKU</label>
         <input type="text" id="SKU" class="form-control"> 
+        <label for="">Nombre del producto</label>
+        <input type="text" id="nombreproducto" class="form-control"> 
+        <label for="">Precio</label>
+        <input type="text" id="precio" class="form-control"> 
+        <label for="">Cantidad</label>
+        <input type="text" id="cantidad" class="form-control"> 
+        <label for="">Estado</label>
+        <input type="text" id="estado" class="form-control"> 
 
       </div>
       <div class="modal-footer">
       
-        <button type="button" class="btn btn-primary">Entendido</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Entendido</button>
       </div>
     </div>
   </div>
@@ -105,9 +118,18 @@
 $('#myModal').on('shown.bs.modal', function (event) {
  
     var elem = document.getElementById('detalles');
-    var sku = elem.getAttribute('data-sku');
+    let sku = elem.getAttribute('data-sku');
+    let nombreproducto = elem.getAttribute('data-nombreproducto');
+    let cantidad = elem.getAttribute('data-cantidad');
+    let precio = elem.getAttribute('data-precio');
+    let estado = elem.getAttribute('data-estado');
     
     $('#SKU').val(sku);
+    $('#nombreproducto').val(nombreproducto);
+    $('#cantidad').val(cantidad);
+    $('#precio').val(precio);
+    $('#estado').val(estado);
+    
 })
 
 </script>
