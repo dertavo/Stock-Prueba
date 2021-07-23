@@ -88,15 +88,15 @@
       </div>
       <div class="modal-body">
         <label for="">SKU</label>
-        <input type="text" id="SKU" class="form-control"> 
+        <input type="text" id="SKU" class="form-control" readonly> 
         <label for="">Nombre del producto</label>
-        <input type="text" id="nombreproducto" class="form-control"> 
+        <input type="text" id="nombreproducto" class="form-control" readonly> 
         <label for="">Precio</label>
-        <input type="text" id="precio" class="form-control"> 
+        <input type="text" id="precio" class="form-control" readonly> 
         <label for="">Cantidad</label>
-        <input type="text" id="cantidad" class="form-control"> 
+        <input type="text" id="cantidad" class="form-control" readonly> 
         <label for="">Estado</label>
-        <input type="text" id="estado" class="form-control"> 
+        <input type="text" id="estado" class="form-control" readonly> 
 
       </div>
       <div class="modal-footer">
